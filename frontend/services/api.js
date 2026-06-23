@@ -1,6 +1,6 @@
 const url = process.env.NEXT_PUBLIC_BASE_URL;
 
-export async function getTasks() {
+export async function getTasksApi() {
 
     try {
         const response = await fetch(`${url}`);
@@ -17,7 +17,7 @@ export async function getTasks() {
 }
 
 
-export async function getTask(id) {
+export async function getTaskApi(id) {
     try {
         const response = await fetch(`${url}/${id}`)
 
@@ -33,7 +33,7 @@ export async function getTask(id) {
 }
 
 
-export async function addTask(task) {
+export async function addTaskApi(task) {
     try {
         const response = await fetch(`${url}`, {
             method: "POST",
@@ -55,7 +55,7 @@ export async function addTask(task) {
 }
 
 
-export async function updateTask(id, task) {
+export async function updateTaskApi(id, task) {
     try {
         const response = await fetch(`${url}/${id}`, {
             method: "PATCH",
@@ -77,7 +77,7 @@ export async function updateTask(id, task) {
 }
 
 
-export async function deleteTask(id) {
+export async function deleteTaskApi(id) {
     try {
         const response = await fetch(`${url}/${id}`, {
             method: "DELETE"
